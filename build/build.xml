@@ -4,33 +4,50 @@
   <property name="jc.version" value="jc222"/>
   <property name="gp.version" value="gp211"/>
 
-
   <property name="jc.home" value="${basedir}/tools/sdk/${jc.version}"/>  
   <property name="gp.home" value="${basedir}/tools/sdk/${gp.version}"/>
   <property name="gp.exportjar" value="${gp.home}/${gp.version}.jar"/>
-  
-  <property name="build.version" value="1.0"/>
-  <property name="build.sourcepath" value="src"/>
-  <property name="build.outputpath" value="build/bin"/>
-  <property name="build.outputfile" value="OpenPLAID.cap"/>
-  <property name="build.class" value="com.makina.security.OpenPLAID.OpenPLAID"/>
-  <property name="build.packageaid" value="E02881C461"/>
-  <property name="build.appletaid" value="E02881C46101"/>
+
+  <property name="buildapplet.version" value="1.0"/>
+  <property name="buildapplet.sourcepath" value="src/applet"/>
+  <property name="buildapplet.outputpath" value="build/bin"/>
+  <property name="buildapplet.outputfile" value="OpenPLAID.cap"/>
+  <property name="buildapplet.class" value="com.makina.security.OpenPLAID.OpenPLAID"/>
+  <property name="buildapplet.packageaid" value="E02881C461"/>
+  <property name="buildapplet.appletaid" value="E02881C46101"/>
+
+  <!-- APPLET -->
+  <property name="buildsam.version" value="1.0"/>
+  <property name="buildsam.sourcepath" value="src/sam"/>
+  <property name="buildsam.outputpath" value="build/bin"/>
+  <property name="buildsam.outputfile" value="OpenPLAIDSAM.cap"/>
+  <property name="buildsam.class" value="com.makina.security.OpenPLAIDSAM.OpenPLAIDSAM"/>
+  <property name="buildsam.packageaid" value="E02881C46153"/>
+  <property name="buildsam.appletaid" value="E02881C46153414D"/>
+
 
   <property name="docs.outputpath" value="build/docs"/>
   <property name="docs.classpath" value="${jc.home}/lib/api.jar;${gp.exportjar}"/>
 
   <target name="clean">
-    <delete dir="${build.outputpath}"/>
+    <delete dir="${buildapplet.outputpath}"/>
+    <delete dir="${buildsam.outputpath}"/>
     <delete dir="${docs.outputpath}"/>
   </target>
 
   <target name="compile" depends="clean">
-    <mkdir dir="${build.outputpath}" />
+    <mkdir dir="${buildapplet.outputpath}" />
+    <mkdir dir="${buildsam.outputpath}" />
     <taskdef name="javacard" classname="pro.javacard.ant.JavaCard" classpath="tools/ant-javacard.jar"/>
     <javacard>
-      <cap aid="${build.packageaid}" output="${build.outputpath}/${build.outputfile}" sources="${build.sourcepath}" version="${build.version}">
-        <applet class="${build.class}" aid="${build.appletaid}"/>
+      <cap aid="${buildapplet.packageaid}" output="${buildapplet.outputpath}/${buildapplet.outputfile}" sources="${buildapplet.sourcepath}" version="${buildapplet.version}">
+        <applet class="${buildapplet.class}" aid="${buildapplet.appletaid}"/>
+        <import exps="${gp.home}" jar="${gp.exportjar}"/>
+      </cap>
+    </javacard>
+    <javacard>
+      <cap aid="${buildsam.packageaid}" output="${buildsam.outputpath}/${buildsam.outputfile}" sources="${buildsam.sourcepath}" version="${buildsam.version}">
+        <applet class="${buildsam.class}" aid="${buildsam.appletaid}"/>
         <import exps="${gp.home}" jar="${gp.exportjar}"/>
       </cap>
     </javacard>
@@ -38,8 +55,8 @@
 
   <target name="doc" depends="compile">
     <mkdir dir="${docs.outputpath}" />
-    <javadoc packagenames="src" sourcepath="${build.sourcepath}" destdir="${docs.outputpath}" classpath="${docs.classpath}" linksource="yes">
-      <fileset dir="${build.sourcepath}">
+    <javadoc packagenames="src" sourcepath="${buildapplet.sourcepath}" destdir="${docs.outputpath}" classpath="${docs.classpath}" linksource="yes">
+      <fileset dir="${buildapplet.sourcepath}">
         <include name="**" />
       </fileset>
     </javadoc>
