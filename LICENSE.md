@@ -1,23 +1,13 @@
-MIT License
+PLAID LICENSE
 
-* Project - OpenFIPS201
+* Project - OpenPLAID
 * Copyright (c) 2017 Commonwealth of Australia
 * Author - Kim O'Sullivan - Makina (kim@makina.com.au)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+All intellectual property rights in the Protocol for Lightweight Authentication of ID (PLAID) and/or its source code and/or its associated reference implementation (the Licenced Materials) are owned by the Commonwealth of Australia. The Licenced Materials are used, copied, accessed, downloaded or reproduced by you, as a User, under licence from the Commonwealth of Australia. 
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The licence provided is perpetual, irrevocable, world-wide, non-exclusive, royalty free and no-charge, but all Users of the Licenced Materials or any product using or incorporating the Licenced Materials must include this statement in any reproduction of the Licenced Materials or in any product using or incorporating the Licenced Materials. 
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Use of the Licenced Materials or any product incorporating the Licenced Materials is at the User's own risk, and the Commonwealth of Australia makes no warranties or representations about the Licenced Materials and/or any product using or incorporating the Licenced Materials, including about their quality or fitness for purpose.
+
+The licence that applies to you as a User of the Licenced Materials can be found at http://www.plaid.gov.au
