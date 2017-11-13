@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Plaid xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="PLAID_TEMPLATE">
+  <TransportKey id="0000" sam_id="60FA" />
+  <AdminKey id="0000" sam_id="6000" />
+  <Blocked>false</Blocked>
+  <ACSRecords>
+    <ACSRecord op_mode_id="0000" data="11111111111111111111111111111111"/>
+    <ACSRecord op_mode_id="0001" data="22222222222222222222222222222222"/>
+    <ACSRecord op_mode_id="0002" data="$DYNAMIC$"/>
+  </ACSRecords>
+  <Keysets>
+    <Key id="2222" sam_id="6022">
+      <OpModeId>0001</OpModeId>
+      <OpModeId>0002</OpModeId>
+    </Key>
+    <Key id="1111" sam_id="6011">
+      <OpModeId>0000</OpModeId>
+      <OpModeId>0001</OpModeId>
+    </Key>
+    <Key id="0000" sam_id="6000">
+      <OpModeId>0000</OpModeId>
+      <OpModeId>0001</OpModeId>
+      <OpModeId>0002</OpModeId>
+    </Key>
+  </Keysets>
+</Plaid>

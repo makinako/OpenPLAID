@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PACSAMKeyRecord" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Hash" type="xs:hexBinary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SystemDiversifier" type="xs:hexBinary" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Attributes" type="PACSAMKeyAttribute" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:hexBinary" />
+    <xs:attribute name="version" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="name" type="xs:string" />
+  </xs:complexType>
+  <xs:simpleType name="PACSAMKeyAttribute">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="None" />
+          <xs:enumeration value="PLAID_AUTH" />
+          <xs:enumeration value="PLAID_KEK" />
+          <xs:enumeration value="DF_MAC" />
+          <xs:enumeration value="DF_AUTH" />
+          <xs:enumeration value="DF_CRYPT" />
+          <xs:enumeration value="DF_CHANGE_KEY" />
+          <xs:enumeration value="DF_CHANGEABLE" />
+          <xs:enumeration value="DF_DIV_KEY" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:complexType name="AES128">
+    <xs:complexContent mixed="false">
+      <xs:extension base="PACSAMKeyRecord">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Value" type="xs:hexBinary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TDEA2KEY">
+    <xs:complexContent mixed="false">
+      <xs:extension base="PACSAMKeyRecord">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Value" type="xs:hexBinary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PLAID">
+    <xs:complexContent mixed="false">
+      <xs:extension base="PACSAMKeyRecord">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="IAKey" type="RSAKey" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FAKey" type="xs:hexBinary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RSAKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="P" type="xs:hexBinary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Q" type="xs:hexBinary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PQ" type="xs:hexBinary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DP" type="xs:hexBinary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DQ" type="xs:hexBinary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="D" type="xs:hexBinary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Modulus" type="xs:hexBinary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Exponent" type="xs:hexBinary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PACSAMKeyFile">
+    <xs:complexContent mixed="false">
+      <xs:extension base="PACSAMKeyRecord">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Records" type="ArrayOfPACSAMKeyRecord" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfPACSAMKeyRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyRecord" nillable="true" type="PACSAMKeyRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyRecord" nillable="true" type="PACSAMKeyRecord" />
+  <xs:element name="KeyFile" nillable="true" type="PACSAMKeyFile" />
+  <xs:element name="PLAID" nillable="true" type="PLAID" />
+  <xs:element name="TDEA2KEY" nillable="true" type="TDEA2KEY" />
+  <xs:element name="AES128" nillable="true" type="AES128" />
+</xs:schema>

@@ -1,0 +1,28 @@
+﻿#region "Copyright"
+/************************************************************************/
+/* COPYRIGHT                                                            */
+/************************************************************************/
+#endregion
+
+#region "Namespace definitions"
+using System;
+using System.Collections.Generic;
+using System.Text;
+#endregion
+
+#region "Class definitions"
+namespace CardFramework
+{
+	public class !Template
+	{
+		#region "Members - Public"
+		#endregion
+
+		#region "Members - Private / Protected"
+		#endregion
+	
+		#region "Constants / Private Declarations"
+		#endregion
+	}
+}
+#endregion
