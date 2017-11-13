@@ -22,8 +22,8 @@
   <property name="buildsam.outputpath" value="build/bin"/>
   <property name="buildsam.outputfile" value="OpenPLAIDSAM.cap"/>
   <property name="buildsam.class" value="com.makina.security.OpenPLAIDSAM.OpenPLAIDSAM"/>
-  <property name="buildsam.packageaid" value="E02881C46153"/>
-  <property name="buildsam.appletaid" value="E02881C46153414D"/>
+  <property name="buildsam.packageaid" value="E02881C46153414D"/>
+  <property name="buildsam.appletaid" value="E02881C4614B4F"/>
 
 
   <property name="docs.outputpath" value="build/docs"/>
