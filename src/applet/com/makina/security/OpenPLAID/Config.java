@@ -35,13 +35,13 @@ public class Config {
 
 	// The number of Keysets to allocate space for
 	// NOTE: This includes the mandatory SHILL and ADMIN keys
-	public static final short COUNT_KEYSETS			= (short)5;	
+	public static final short COUNT_KEYSETS		= (short)5;	
 	
 	// The number of ACSRecords to allocate space for (including the shill ACSRecord)
-	public static final short COUNT_ACSRECORDS 		= (short)6;
+	public static final short COUNT_ACSRECORDS 	= (short)6;
 	
 	// The maximum length of each ACS Record
-	public static final short LENGTH_ACSRECORD 		= (short)16;
+	public static final short LENGTH_ACSRECORD 	= (short)16;
 	
 	// The number of Access Rules to allocate space for
 	// NOTE: This is the total number for any combination of keyset/acsrecord
@@ -59,7 +59,7 @@ public class Config {
 	// This must only be enabled for protocol debugging and analysis, as this forces the applet
 	// to use FIXED values for RND1 and DIVDATA according to the ISO 25185-1 Annex A test values.	 
 	// !!!!!!! WARNING !!!!!!!	
-	public static final boolean FEATURE_PLAID_TEST_VECTORS = true;
+	public static final boolean FEATURE_PLAID_TEST_VECTORS = false;
 
 	// If enabled, the administrative keyset will be restricted to the contact interface
 	// NOTE: This also includes personalisation!
