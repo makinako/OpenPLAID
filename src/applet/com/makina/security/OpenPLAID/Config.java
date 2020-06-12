@@ -73,7 +73,7 @@ public class Config {
 	public static final boolean FEATURE_CLEAR_ON_RESET = false;
 
 	// If enabled, administrative (persistant) data changes will be done in a transaction
-	public static final boolean FEATURE_USE_TRANSACTIONS = false;
+	public static final boolean FEATURE_USE_TRANSACTIONS = true;
 
 	// If enabled, the administrative keyset can read any ACSRecord regardless of permissions set
 	public static final boolean FEATURE_ADMIN_GLOBAL_PERMISSIONS = true;
