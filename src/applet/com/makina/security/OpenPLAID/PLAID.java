@@ -848,7 +848,9 @@ public class PLAID {
 		};
 		
 		// 5 - If the updated keyset was KEYSET_ADMIN, reset our authentication
-		if (Config.KEYSET_ADMIN == id) resetAuthentication();		
+		if (Config.KEYSET_ADMIN == id) {
+			resetAuthentication();
+		}
 	}	
 	
 	/***

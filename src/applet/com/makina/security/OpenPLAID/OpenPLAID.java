@@ -416,6 +416,18 @@ public class OpenPLAID extends Applet implements ExtendedLength
 			try {
 				beginTransaction();				
 				cspPLAID.keyCreate(id, buffer, iaModulusOffset, iaExponentOffset, faKeyOffset, ruleOffset);
+
+				// OPTIONALLY 
+				// - If FEATURE_AUTO_ACTIVATE_ON_ADMIN_KEY_CHANGE is true; and
+				// - If the state is STATE_SELECTABLE
+				// - If the keyset being updated is KEYSET_ADMIN
+				// Update the applet state to STATE_PERSONALISED automatically				
+				if (Config.FEATURE_AUTO_ACTIVATE_ON_ADMIN_KEY_CHANGE && 
+						persistentState[OFFSET_APPLET_STATE] == STATE_SELECTABLE &&
+						Config.KEYSET_ADMIN == id) {
+					activate();
+				}
+				
 				commitTransaction();
 			}
 			catch (Exception ex) {

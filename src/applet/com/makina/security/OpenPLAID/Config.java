@@ -91,6 +91,11 @@ public class Config {
 	// as the personalisation scheme will always enforce strict M2 padding.
 	public static final boolean FEATURE_STRICT_ISO9797_M2_PADDING = true;
 
+	// If enabled, the PLAID applet will automatically progress to the STATE_PERSONALISED lifecycle
+	// state when the administrative key is changed. This allows the possibility of a card issuer to
+	// fully personalise a card without having the administrative private key part.
+	public static final boolean FEATURE_AUTO_ACTIVATE_ON_ADMIN_KEY_CHANGE = true;
+
 	/*
 	 * DEFAULT KEY INFORMATION
 	 */
