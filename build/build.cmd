@@ -3,7 +3,7 @@
 REM *********************************************************************
 REM This value MUST be defined if JAVA_HOME is not already set correctly.
 REM *********************************************************************
-SET JDK="C:\Progra~1\Java\jdk1.8.0_151"
+SET JDK="C:\Progra~1\Java\jdk1.8.0_221"
 
 ECHO Setting environment variables
 SETLOCAL ENABLEEXTENSIONS
@@ -22,6 +22,7 @@ IF DEFINED JAVA_HOME (
 
 IF DEFINED ANT_HOME (
 	ECHO ANT_HOME already set to "%ANT_HOME%"
+
 ) ELSE (
 	SET ANT_HOME=..\tools\ant
 )

@@ -9,7 +9,7 @@
   <property name="gp.exportjar" value="${gp.home}/${gp.version}.jar"/>
 
   <property name="buildapplet.version" value="1.0"/>
-  <property name="buildapplet.sourcepath" value="src/applet"/>
+  <property name="buildapplet.sourcepath" value="src"/>
   <property name="buildapplet.outputpath" value="build/bin"/>
   <property name="buildapplet.outputfile" value="OpenPLAID.cap"/>
   <property name="buildapplet.class" value="com.makina.security.OpenPLAID.OpenPLAID"/>
@@ -55,7 +55,7 @@
 
   <target name="doc" depends="compile">
     <mkdir dir="${docs.outputpath}" />
-    <javadoc packagenames="src" sourcepath="${buildapplet.sourcepath}" destdir="${docs.outputpath}" classpath="${docs.classpath}" linksource="yes">
+    <javadoc packagenames="src" excludepackage="example" sourcepath="${buildapplet.sourcepath}" destdir="${docs.outputpath}" classpath="${docs.classpath}" linksource="yes">
       <fileset dir="${buildapplet.sourcepath}">
         <include name="**" />
       </fileset>
