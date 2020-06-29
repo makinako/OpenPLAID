@@ -55,9 +55,11 @@
 
   <target name="doc" depends="compile">
     <mkdir dir="${docs.outputpath}" />
-    <javadoc packagenames="src" excludepackage="example" sourcepath="${buildapplet.sourcepath}" destdir="${docs.outputpath}" classpath="${docs.classpath}" linksource="yes">
+    <javadoc packagenames="src" sourcepath="${buildapplet.sourcepath}" destdir="${docs.outputpath}" classpath="${docs.classpath}" linksource="yes">
       <fileset dir="${buildapplet.sourcepath}">
         <include name="**" />
+        <exclude name="example/**" />
+        <exclude name="sam/**" />
       </fileset>
     </javadoc>
   </target>
