@@ -35,7 +35,7 @@ public class Config {
 
 	// The number of Keysets to allocate space for
 	// NOTE: This includes the mandatory SHILL and ADMIN keys
-	public static final short COUNT_KEYSETS		= (short)5;	
+	public static final short COUNT_KEYSETS		= (short)7;	
 	
 	// The number of ACSRecords to allocate space for (including the shill ACSRecord)
 	public static final short COUNT_ACSRECORDS 	= (short)6;
